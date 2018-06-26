@@ -50,7 +50,7 @@ If you specify a full author (with a name *and* email), the generator will autom
       index.js
     test/
       index.test.js
-    .gitingore
+    .gitignore
     LICENSE.md
     README.md
     package.json
