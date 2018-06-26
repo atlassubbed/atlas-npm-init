@@ -36,6 +36,10 @@ If you don't specify any args, you will be prompted to enter your name, descript
 npm-init
 ```
 
+#### speciying an author
+
+If you specify a full author (with a name *and* email), the generator will automatically initialize a repository and perform an initial commit.
+
 ### the generated project
 
 #### structure
@@ -81,10 +85,20 @@ I'd like to have a global executable called `atlas` which has the following sub-
 
 As of right now, the `atlas` command only has subcommands 3 and 4 above. `atlas-npm-init` (this package) and `altas-webpack-init` are their own commands, but i'd like to turn them into 1 and 2 above, respectively. The `atlas` command should then be responsible for initializing pretty much everything in a new project.
 
-## notes
+## caveats
+
+#### license
 
 `LICENSE.md` defaults to Apache-2.0. Should I change this to MIT? Currently, there's no option to change it from the CLI. Changing it manually would simply require editing a line in `package.json` and editing the `LICENSE.md` file itself.
 
+#### private
+
 By default, packages will be private -- be sure to delete that line if you plan on publishing your generated package.
 
+#### `sinon` and `sinon-chai`
+
 When I was writing this package, I included `sinon` and `sinon-chai`, but I removed them because I found myself not using them in my tests. `sinon` is great, but why don't I use it? Spying, stubbing and mocking is pretty easy without it.
+
+#### git initialization
+
+Currently, the generator will automatically initialize a repo and make the first commit if you specify a full author. There's no way to turn this off right now. I understand that this can be undesirable, but I always needed this steps, so I figured it would just be a default.
