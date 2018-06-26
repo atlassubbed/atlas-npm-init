@@ -171,7 +171,7 @@ describe("npm starter package generator", function(){
     tempDir((err, bin, cwd) => {
       if (err) return done(err);
       let numPrompts = 0;
-      new Shell(`${bin} -a atlassubbed`, {cwd}).onData((err, data, reply) => {
+      new Shell(`node ${bin} -a atlassubbed`, {cwd}).onData((err, data, reply) => {
         if (err) return reply(new Error(err));
         numPrompts++;
       }).onDone(err => {
@@ -185,7 +185,7 @@ describe("npm starter package generator", function(){
     tempDir((err, bin, cwd) => {
       if (err) return done(err);
       let numPrompts = 0;
-      new Shell(bin, {cwd}).onData((err, data, reply) => {
+      new Shell("node " + bin, {cwd}).onData((err, data, reply) => {
         if (err) return reply(new Error(err));
         const expectedPrompt = getPrompt(numPrompts++)
         expect(data).to.have.string(expectedPrompt)

@@ -16,7 +16,7 @@ const tempDir = cb => {
 }
 
 const build = (cwd, args, cb) => {
-  exec(`${bin}${flatArgs(args)}`, {cwd}, err => cb(err, cwd))
+  exec(`node ${bin}${flatArgs(args)}`, {cwd}, err => cb(err, cwd))
 }
 
 const tempBuild = (args, cb) => {
