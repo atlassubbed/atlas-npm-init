@@ -36,7 +36,7 @@ If you don't specify any args, you will be prompted to enter your name, descript
 npm-init
 ```
 
-#### speciying an author
+#### specifying an author
 
 If you specify a full author (with a name *and* email), the generator will automatically initialize a repository and perform an initial commit.
 
