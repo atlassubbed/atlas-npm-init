@@ -12,6 +12,10 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.\n`
 
+const getGitIgnore = () => `node_modules/
+npm-debug.log
+.DS_Store
+`
 const promptMessages = [
   "Enter npm package name",
   "Enter npm package description",
@@ -20,4 +24,4 @@ const promptMessages = [
 
 const getPrompt = index => promptMessages[index]
 
-module.exports = { getLicense, getPrompt }
+module.exports = { getLicense, getPrompt, getGitIgnore }

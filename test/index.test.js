@@ -4,7 +4,7 @@ const { join } = require("path")
 const { exec } = require("child_process")
 const Shell = require("atlas-interactive-shell")
 const { build, tempDir, buildAndRead, buildAndCheck, buildAndRun } = require("./helpers")
-const { getLicense, getPrompt } = require("./assets/assets")
+const { getLicense, getPrompt, getGitIgnore } = require("./assets/assets")
 
 const assets = join(__dirname, "assets")
 
@@ -60,6 +60,22 @@ describe("npm starter package generator", function(){
     buildAndRun({n}, "git log", (err, out) => {
       expect(err).to.be.an('error')
       expect(err.message).to.have.string("does not have any commits yet")
+      done()
+    })
+  })
+  it("should correctly create a .gitignore in a named project", function(done){
+    const n = "my-project"
+    buildAndRead({n}, join(n, ".gitignore"), (err, data) => {
+      if (err) return done(err);
+      expect(data).to.equal(getGitIgnore());
+      done()
+    })
+  })
+  it("should correctly create a .gitignore in a nameless project", function(done){
+    const d = "my description", n = "npm-package"
+    buildAndRead({d}, join(n, ".gitignore"), (err, data) => {
+      if (err) return done(err);
+      expect(data).to.equal(getGitIgnore());
       done()
     })
   })
