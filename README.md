@@ -101,4 +101,4 @@ When I was writing this package, I included `sinon` and `sinon-chai`, but I remo
 
 #### git initialization
 
-Currently, the generator will automatically initialize a repo and make the first commit if you specify a full author. There's no way to turn this off right now. I understand that this can be undesirable, but I always needed this steps, so I figured it would just be a default.
+Currently, the generator will automatically initialize a repo and make the first commit if you specify a full author. There's no way to turn this off right now. I understand that this can be undesirable, but I always needed these steps, so I figured it would just be a default.
