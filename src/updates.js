@@ -42,4 +42,8 @@ const updateIndex = (dest, n, cb) => {
   writeFile(join(dest, "src", "index.js"), `console.log("Hello from ${n}!")\n`, cb)
 }
 
-module.exports = { updatePackage, updateLicense, updateReadme, updateIndex }
+const createGitIgnore = (dest, cb) => {
+  writeFile(join(dest, ".gitignore"), `node_modules/\nnpm-debug.log\n.DS_Store\n`, cb)
+}
+
+module.exports = { updatePackage, updateLicense, updateReadme, updateIndex, createGitIgnore }

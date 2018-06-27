@@ -5,7 +5,12 @@ const { join } = require("path")
 const { exec } = require("child_process")
 const { opt, project, hasFlag, contains } = require("./util")
 const parallel = require("atlas-parallel")
-const { updatePackage, updateLicense, updateReadme, updateIndex } = require("./updates")
+const { 
+  updatePackage, 
+  updateLicense, 
+  updateReadme, 
+  updateIndex,
+  createGitIgnore } = require("./updates")
 
 // get args either from CLI flags or via prompt
 const getArgs = (argDefs, cb) => {
@@ -36,6 +41,7 @@ const build = ({n, d, a}, dest, cb) => {
     exec(`cp -r ${src} ${dest}`, err => {
       if (err) return cb([err]);
       parallel([
+        done => createGitIgnore(dest, done),
         done => updatePackage(src, dest, n, d, a, done),
         done => updateLicense(dest, n, a, done),
         done => updateReadme(dest, n, d, done),
