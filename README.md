@@ -30,7 +30,7 @@ npm-init -n my-app -d "my description" -a "atlassubbed <atlassubbed@gmail.com>"
 
 #### without args
 
-If you don't specify any args, you will be prompted to enter your name, description and author. In this case, all responses are optional. If you don't specify a name, it will default to "npm-package":
+If you don't specify any args, you will be prompted to enter the name, description and author. In this case, all responses are optional. If you don't specify a name, it will default to "npm-package":
 
 ```
 npm-init
