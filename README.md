@@ -22,7 +22,7 @@ This package will generate a project with `chai`, `mocha` and some minimal boile
 
 #### with args
 
-You can specify a name, description, and author. The name is required, the rest are optional:
+You can specify a name, description, and author. At least one field is required, the rest are optional:
 
 ```
 npm-init -n my-app -d "my description" -a "atlassubbed <atlassubbed@gmail.com>"
