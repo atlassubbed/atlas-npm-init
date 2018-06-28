@@ -1,6 +1,6 @@
 {
   "name": "atlas-npm-init",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A CLI tool for generating npm projects and necessary boilerplate.",
   "scripts": {
     "test-server": "mocha --colors --watch --recursive './test/**/*.test.js' || rm -rf ./test/tmp-*",
