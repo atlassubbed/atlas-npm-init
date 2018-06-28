@@ -2,6 +2,8 @@
 
 A CLI tool for generating npm projects and necessary boilerplate.
 
+[![Travis](https://img.shields.io/travis/atlassubbed/atlas-npm-init.svg)](https://travis-ci.org/atlassubbed/atlas-npm-init)
+
 ---
 
 ## install
