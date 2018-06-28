@@ -50,6 +50,7 @@ If you specify a full author (with a name *and* email), the generator will autom
       index.js
     test/
       index.test.js
+    .travis.yml
     .gitignore
     LICENSE.md
     README.md
