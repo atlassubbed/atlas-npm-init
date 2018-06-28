@@ -33,7 +33,7 @@ const updateLicense = (dest, n, a, cb) => {
   })
 }
 
-const travisBadge = "[![Travis](https://img.shields.io/travis/[username]/[repo].svg)](https://travis-ci.org/[username]/[repo].svg)"
+const travisBadge = "[![Travis](https://img.shields.io/travis/[username]/[repo].svg)](https://travis-ci.org/[username]/[repo])"
 
 const updateReadme = (dest, n, d, cb) => {
   // initial few lines of README.md

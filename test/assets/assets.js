@@ -22,7 +22,7 @@ const promptMessages = [
   "Enter npm package author"
 ]
 
-const getTravisBadge = () => `[![Travis](https://img.shields.io/travis/[username]/[repo].svg)](https://travis-ci.org/[username]/[repo].svg)`
+const getTravisBadge = () => `[![Travis](https://img.shields.io/travis/[username]/[repo].svg)](https://travis-ci.org/[username]/[repo])`
 
 const getPrompt = index => promptMessages[index]
 
