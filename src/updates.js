@@ -33,9 +33,12 @@ const updateLicense = (dest, n, a, cb) => {
   })
 }
 
+const travisBadge = "[![Travis](https://img.shields.io/travis/[username]/[repo].svg)](https://travis-ci.org/[username]/[repo])"
+
 const updateReadme = (dest, n, d, cb) => {
-  const desc = d ? `\n${d}\n\n` : "";
-  writeFile(join(dest, "README.md"), `# ${n}\n${desc}---\n`, cb)
+  // initial few lines of README.md
+  const lines = [`# ${n}`, d, travisBadge, "---"].filter(l => !!l)
+  writeFile(join(dest, "README.md"), `${lines.join("\n\n")}\n`, cb)
 }
 
 const updateIndex = (dest, n, cb) => {

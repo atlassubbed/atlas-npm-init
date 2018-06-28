@@ -22,6 +22,8 @@ const promptMessages = [
   "Enter npm package author"
 ]
 
+const getTravisBadge = () => `[![Travis](https://img.shields.io/travis/[username]/[repo].svg)](https://travis-ci.org/[username]/[repo])`
+
 const getPrompt = index => promptMessages[index]
 
-module.exports = { getLicense, getPrompt, getGitIgnore }
+module.exports = { getLicense, getPrompt, getGitIgnore, getTravisBadge }

@@ -4,7 +4,7 @@ const { join } = require("path")
 const { exec } = require("child_process")
 const Shell = require("atlas-interactive-shell")
 const { build, tempDir, buildAndRead, buildAndCheck, buildAndRun } = require("./helpers")
-const { getLicense, getPrompt, getGitIgnore } = require("./assets/assets")
+const { getLicense, getPrompt, getGitIgnore, getTravisBadge } = require("./assets/assets")
 
 const assets = join(__dirname, "assets")
 
@@ -83,7 +83,7 @@ describe("npm starter package generator", function(){
     const n = "my-project"
     buildAndRead({n}, join(n, "README.md"), (err, data) => {
       if (err) return done(err);
-      expect(data).to.equal(`# ${n}\n---\n`);
+      expect(data).to.equal(`# ${n}\n\n${getTravisBadge()}\n\n---\n`);
       done()
     })
   })
@@ -91,7 +91,7 @@ describe("npm starter package generator", function(){
     const n = "my-project", d = "my description!"
     buildAndRead({n, d}, join(n, "README.md"), (err, data) => {
       if (err) return done(err);
-      expect(data).to.equal(`# ${n}\n\n${d}\n\n---\n`);
+      expect(data).to.equal(`# ${n}\n\n${d}\n\n${getTravisBadge()}\n\n---\n`);
       done()
     })
   })
@@ -99,7 +99,7 @@ describe("npm starter package generator", function(){
     const n = "npm-package"
     buildAndRead({a: "atlassubbed"}, join(n, "README.md"), (err, data) => {
       if (err) return done(err);
-      expect(data).to.equal(`# ${n}\n---\n`);
+      expect(data).to.equal(`# ${n}\n\n${getTravisBadge()}\n\n---\n`);
       done()
     })
   })
@@ -107,7 +107,7 @@ describe("npm starter package generator", function(){
     const n = "npm-package", d = "my description!"
     buildAndRead({d}, join(n, "README.md"), (err, data) => {
       if (err) return done(err);
-      expect(data).to.equal(`# ${n}\n\n${d}\n\n---\n`);
+      expect(data).to.equal(`# ${n}\n\n${d}\n\n${getTravisBadge()}\n\n---\n`);
       done()
     })
   })
