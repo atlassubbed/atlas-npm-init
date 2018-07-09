@@ -94,10 +94,6 @@ As of right now, the `atlas` command only has subcommands 3 and 4 above. `atlas-
 
 `LICENSE.md` defaults to Apache-2.0. Should I change this to MIT? Currently, there's no option to change it from the CLI. Changing it manually would simply require editing a line in `package.json` and editing the `LICENSE.md` file itself.
 
-#### private
-
-By default, packages will be private -- be sure to delete that line if you plan on publishing your generated package.
-
 #### `sinon` and `sinon-chai`
 
 When I was writing this package, I included `sinon` and `sinon-chai`, but I removed them because I found myself not using them in my tests. `sinon` is great, but why don't I use it? Spying, stubbing and mocking is pretty easy without it.
