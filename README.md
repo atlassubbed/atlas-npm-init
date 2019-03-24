@@ -92,7 +92,7 @@ As of right now, the `atlas` command only has subcommands 3 and 4 above. `atlas-
 
 #### license
 
-`LICENSE.md` defaults to Apache-2.0. Should I change this to MIT? Currently, there's no option to change it from the CLI. Changing it manually would simply require editing a line in `package.json` and editing the `LICENSE.md` file itself.
+`LICENSE.md` defaults to MIT. Currently, there's no option to change it from the CLI. Changing it manually would simply require editing a line in `package.json` and editing the `LICENSE.md` file itself.
 
 #### `sinon` and `sinon-chai`
 

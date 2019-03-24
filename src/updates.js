@@ -7,11 +7,9 @@ const updatePackage = (src, dest, n, d, a, cb) => {
   pkg.name = n
   pkg.description = d
   pkg.author = a
-  const getOS = 'process.stdout.write(os.type().toLowerCase())'
-  exec(`node -v && npm -v && node -e "${getOS}"`, (err, val) => {
+  exec(`node -v && npm -v`, (err, val) => {
     if (err) return cb(err);
     val = val.split("\n")
-    pkg.os = val[2] === "darwin" ? [val[2], "linux"] : [val[2]]
     pkg.engines = {
       node: `^${val[0].slice(1)}`,
       npm: `^${val[1]}`
